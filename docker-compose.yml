@@ -14,12 +14,9 @@ services:
     ports:
       - '13306:3306'
     volumes:
-      - db:/var/lib/mysql
+      - ./dbs:/var/lib/mysql
     networks:
       - my_network_custom
-volumes:
-  db:
-    driver: local
 networks:
   my_network_custom:
     driver: bridge
