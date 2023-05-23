@@ -1,14 +1,16 @@
-version: '3'
+version: '3.8'
 services:
-  mysql:
+  db:
     image: mysql:8.0
+    cap_add:
+      - SYS_NICE
     restart: always
     environment:
       - MYSQL_DATABASE=roombooking
       - MYSQL_ROOT_PASSWORD=12345678@Abc
       - MYSQL_USER: pttam
       - MYSQL_PASSWORD=12345678@Abc
-      - TZ: "Asia/Ho_Chi_Minh"
+      - TZ: Asia/Ho_Chi_Minh
     ports:
       - '13306:3306'
     volumes:
