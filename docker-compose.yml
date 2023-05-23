@@ -17,6 +17,20 @@ services:
       - ./dbs:/var/lib/mysql
     networks:
       - my_network_custom
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '1234:80'
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=pttam
+      - PMA_PASSWORD=12345678@Abc
+      - PMA_ARBITRARY=1
+    networks:
+      - my_network_custom
+    depends_on:
+      - db
 networks:
   my_network_custom:
     driver: bridge
