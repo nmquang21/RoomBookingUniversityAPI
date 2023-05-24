@@ -266,8 +266,8 @@ namespace RoomBooking.API.Controllers
         /// </summary>
         /// <param name="BookingID"></param>
         /// <returns></returns>
-        [HttpGet("sendMail")]
-        public async string SendMail()
+        [HttpGet("SendMailString")]
+        public async Task<IActionResult> SendMailString()
         {
             var emailFrom = new EmailData();
             emailFrom.EmailToId = "quangdiep957@gmail.com";
@@ -275,7 +275,7 @@ namespace RoomBooking.API.Controllers
             emailFrom.EmailSubject = "Thông báo đặt phòng";
             emailFrom.EmailToName = "BQDIEP";
             var res = await _scheduleService.SendEmailString(emailFrom);
-            return res;
+            return StatusCode(Convert.ToInt32(HTTPStatusCode.SuccessResponse), res);
         }
         /// <summary>
         /// Xem báo cáo theo mã BookingID
