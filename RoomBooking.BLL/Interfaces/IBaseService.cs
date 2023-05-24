@@ -63,7 +63,7 @@ namespace RoomBooking.BLL.Interfaces
         public  Task<bool> DeleteService(Guid entityId);
 
         public Task SendNotify(string ID, string notify, DateTime time, bool? sendAdmin);
-        public Task<string> SendEmailString(EmailData emailData)
+        public Task<string> SendEmailString(EmailData emailData);
         
     }
 }
