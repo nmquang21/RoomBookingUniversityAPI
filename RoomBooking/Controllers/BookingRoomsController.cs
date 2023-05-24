@@ -261,6 +261,22 @@ namespace RoomBooking.API.Controllers
             var res = await _scheduleService.GetEntityPaging(param);
             return StatusCode(Convert.ToInt32(HTTPStatusCode.SuccessResponse), res);
         }
+         /// <summary>
+        /// Thực hiện lấy danh sach lịch sử đặt phòng
+        /// </summary>
+        /// <param name="BookingID"></param>
+        /// <returns></returns>
+        [HttpGet("sendMail")]
+        public async string SendMail()
+        {
+            var emailFrom = new EmailData();
+            emailFrom.EmailToId = "quangdiep957@gmail.com";
+            emailFrom.EmailBody = $"hello";
+            emailFrom.EmailSubject = "Thông báo đặt phòng";
+            emailFrom.EmailToName = "BQDIEP";
+            var res = await _scheduleService.SendEmailString(emailFrom);
+            return StatusCode(Convert.ToInt32(HTTPStatusCode.SuccessResponse), res);
+        }
         /// <summary>
         /// Xem báo cáo theo mã BookingID
         /// </summary>
