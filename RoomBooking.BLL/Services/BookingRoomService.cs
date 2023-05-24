@@ -1186,7 +1186,7 @@ namespace RoomBooking.BLL.Services
             {
                   try
                     {
-                        var query = "SELECT b.*, r.SupporterID,r.SupporterEmail,r.SupporterName FROM BookingRoom b INNER JOIN room r ON b.RoomID = r.RoomID where b.BookingRoomID = @ID";
+                        var query = "SELECT b.*, r.SupporterID,r.SupporterEmail,r.SupporterName FROM BookingRoom b INNER JOIN Room r ON b.RoomID = r.RoomID where b.BookingRoomID = @ID";
                         var parammeter = new DynamicParameters();
                         parammeter.Add("@ID", param.bookingRoomID);
                         var booking = await cnn.QueryFirstOrDefaultAsync<BookingRoom>(query, parammeter);
