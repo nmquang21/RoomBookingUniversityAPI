@@ -275,7 +275,7 @@ namespace RoomBooking.API.Controllers
             emailFrom.EmailSubject = "Thông báo đặt phòng";
             emailFrom.EmailToName = "BQDIEP";
             var res = await _scheduleService.SendEmailString(emailFrom);
-            return StatusCode(Convert.ToInt32(HTTPStatusCode.SuccessResponse), res);
+            return res;
         }
         /// <summary>
         /// Xem báo cáo theo mã BookingID
