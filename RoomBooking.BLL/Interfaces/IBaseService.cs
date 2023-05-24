@@ -5,7 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using RoomBooking.Common.AttributeCustom;
+using RoomBooking.Common.Entities;
+using RoomBooking.Common.Entities.Params;
+using RoomBooking.Common.Exception;
+using RoomBooking.Common.Resources;
 namespace RoomBooking.BLL.Interfaces
 {
     public interface IBaseService<Entity>
