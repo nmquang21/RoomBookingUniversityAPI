@@ -228,7 +228,7 @@ namespace RoomBooking.BLL.Services
                 _emailSettings.Password = "jeopyuiouqargvgs";
                 _emailSettings.Host = "smtp.gmail.com";
                 _emailSettings.Port = 465;
-                _emailSettings.UseSSL = true;
+                _emailSettings.UseSSL = false;
                 MimeMessage emailMessage = new MimeMessage();
                 MailboxAddress emailFrom = new MailboxAddress(_emailSettings.Name, _emailSettings.EmailId);
                 emailMessage.From.Add(emailFrom);
