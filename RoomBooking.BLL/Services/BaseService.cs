@@ -250,6 +250,7 @@ namespace RoomBooking.BLL.Services
             catch (Exception ex)
             {
                 //Log Exception Details
+                Console.WriteLine(ex);
                 return false;
             }
         }
