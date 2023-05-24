@@ -41,7 +41,7 @@ namespace RoomBooking.BLL.Services
         /// </summary>
         /// <param name="emailData"></param>
         /// <returns></returns>
-        public string SendEmailString(EmailData emailData)
+        public Task<string> SendEmailString(EmailData emailData)
         {
             try
             {
